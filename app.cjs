@@ -1,6 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const storage = require('node-persist');
+const fetch = require("node-fetch");
 
 const app = express();
 app.use(cors());
