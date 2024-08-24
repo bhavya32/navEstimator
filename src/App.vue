@@ -64,7 +64,7 @@ async function getMFdetails(mf) {
   if ("lastTradeTime" in changes) {
     let ltr = new Date(changes.lastTradeTime)
     let now = new Date()
-    if (ltr.toDateString() == now.toDateString()) {
+    if (ltr.toDateString() != now.toDateString()) {
       mfDetails.value.newNav = "Today's stock prices not out"
       return
     }
