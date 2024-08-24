@@ -1,0 +1,29 @@
+@import url('https://fonts.cdnfonts.com/css/neo-sans-pro');
+
+:root {
+  --color-background: #f4f4f4;
+  --color-container: #ffffff;
+}
+
+.dark-mode {
+  --color-background: #1A1A1A;
+  --color-container:#333333;
+  --bs-body-color: #ffffff;
+  
+}
+
+
+
+html, body, #app{
+  height: 100%;
+  width: 100%;
+  background-color: var(--color-background);
+  overflow: hidden;
+}
+
+#app {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
