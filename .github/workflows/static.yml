@@ -41,4 +41,4 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: npm install
-      - run: pm2 restart navEstimator
+      - run: C:\Users\Administrator\AppData\Roaming\npm\pm2 restart navEstimator
