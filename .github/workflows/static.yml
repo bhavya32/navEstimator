@@ -35,3 +35,10 @@ jobs:
     - name: Deploy to GitHub Pages
       id: deployment
       uses: actions/deploy-pages@v4
+  
+  deploy-express:
+    runs-on: self-hosted
+    steps:
+      - uses: actions/checkout@v4
+      - run: npm install
+      - run: pm2 restart navEstimator
