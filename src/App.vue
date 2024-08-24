@@ -2,6 +2,7 @@
 import { ref } from "vue";
 
 import Search from "./components/Search.vue"
+let base_url = "https://navEstimator.bhavyasoftwares.com"
 var darkMode = ref(false)
 var showOverlay = ref(false)
 var holdDetails = ref([])
@@ -12,7 +13,7 @@ if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').match
 async function getStockPrices(holdings) {
   
   mfDetails.value.newNav = `Fetching % change of ${holdings.length} stocks`
-  let r = await(await fetch("http://localhost:3000/stockPrices", {
+  let r = await(await fetch(base_url + "/stockPrices", {
   headers: {
     "content-type": "application/json",
   },
@@ -46,7 +47,7 @@ async function calculateNav(holdings, changes) {
 async function getMFdetails(mf) {
   mfDetails.value.nav = "Fetching Data..."
   
-  let url = "http://localhost:3000/mfHoldings?name=" + mf.search_id
+  let url = base_url + "/mfHoldings?name=" + mf.search_id
   let x = await (await fetch(url)).json()
   mfDetails.value.nav = `₹${x.nav} as of ${x.nav_date}`
   //check if nav is of today

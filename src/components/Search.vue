@@ -41,7 +41,8 @@
         }
   
         try {
-          const response = await fetch(`http://localhost:3000/search?name=${this.query}`);
+          let base_url = "https://navEstimator.bhavyasoftwares.com"
+          const response = await fetch(`${base_url}/search?name=${this.query}`);
           if (response.ok) {
             this.results = (await response.json())["data"]["content"];
           } else {
@@ -54,7 +55,7 @@
       hideDropdown() {
         setTimeout(() => {
           this.dropdownVisible = false;
-        }, 200); // Delay to allow click event on dropdown items
+        }, 200);
       },
       selectResult(result) {
         this.query = result.title;
